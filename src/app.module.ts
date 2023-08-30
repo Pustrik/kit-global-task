@@ -17,7 +17,7 @@ import { TaskModule } from './common/modules/task/task.module';
     ProjectModule,
     TaskModule,
     MongooseModule.forRootAsync({
-      imports: [ConfigModule], // Если ваш ConfigService находится в отдельном модуле
+      imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => {
         const mongoUrl = configService.get<string>('MONGO_URL');
         return {
